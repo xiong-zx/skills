@@ -1,6 +1,6 @@
 ---
 name: metabot-todos
-description: Retrieve, validate, and display canonical MetaMemory ToDos from `/imac/todo` with deterministic grouping and status summaries. Use when the user asks to show, list, inspect, summarize, count, or get details about current, active, completed, cancelled, blocked, or specific MetaBot ToDos.
+description: Retrieve, validate, and display canonical machine-local MetaMemory ToDos with deterministic grouping and status summaries. Use when the user asks to show, list, inspect, summarize, count, or get details about current, active, completed, cancelled, blocked, or specific MetaBot ToDos.
 ---
 
 # MetaBot ToDos
@@ -28,6 +28,10 @@ node scripts/todo-display.mjs --include-done
 # Structured output for further processing
 node scripts/todo-display.mjs --json
 ```
+
+The script auto-detects `/imac/todo`, `/savio/todo`, or the legacy
+`/cargo1/todo` root. Use `--folder-path` or `METABOT_TODO_FOLDER` only when an
+explicit non-standard root is required.
 
 When the current working directory is not the skill directory, pass the
 absolute path to the same script.

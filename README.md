@@ -5,7 +5,7 @@ do not belong in the public MetaBot product repository.
 
 ## Bundles
 
-- `metabot-todos`: reads and validates canonical ToDos under `/imac/todo`.
+- `metabot-todos`: reads and validates the current machine's canonical ToDos.
 - `math-report`: produces formula-first mathematical analysis reports.
 - `tech-report`: produces reproducible experimental technical reports.
 

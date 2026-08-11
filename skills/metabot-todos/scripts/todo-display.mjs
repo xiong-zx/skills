@@ -3,7 +3,7 @@
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 
-const DEFAULT_FOLDER_PATH = '/imac/todo';
+const DEFAULT_FOLDER_CANDIDATES = ['/imac/todo', '/savio/todo', '/cargo1/todo'];
 const ACTIVE_STATUSES = new Set(['in_progress', 'waiting', 'blocked']);
 const TERMINAL_STATUSES = new Set(['done', 'cancelled']);
 const DISPLAY_STATUSES = new Set(['in_progress', 'waiting', 'blocked', 'cancelled']);
@@ -230,7 +230,7 @@ function compareItems(left, right) {
   return left.id.localeCompare(right.id, undefined, { numeric: true });
 }
 
-export function buildSnapshot(documents, folderPath = DEFAULT_FOLDER_PATH) {
+export function buildSnapshot(documents, folderPath = DEFAULT_FOLDER_CANDIDATES[0]) {
   const categories = [];
   const ids = new Map();
 
@@ -286,10 +286,18 @@ function runJson(metabotBin, args) {
 
 export function loadSnapshot(options = {}) {
   const metabotBin = options.metabotBin ?? process.env.METABOT_BIN ?? 'metabot';
-  const folderPath = options.folderPath ?? DEFAULT_FOLDER_PATH;
+  const requestedFolderPath = options.folderPath ?? process.env.METABOT_TODO_FOLDER ?? null;
   const folders = runJson(metabotBin, ['memory', 'folders']);
-  const folder = findFolder(folders, folderPath);
-  if (!folder) throw new TodoParseError(`folder not found: ${folderPath}`);
+  const candidates = requestedFolderPath ? [requestedFolderPath] : DEFAULT_FOLDER_CANDIDATES;
+  const folder = candidates.map((candidate) => findFolder(folders, candidate)).find(Boolean);
+  if (!folder) {
+    throw new TodoParseError(
+      requestedFolderPath
+        ? `folder not found: ${requestedFolderPath}`
+        : `no canonical ToDo folder found; checked: ${DEFAULT_FOLDER_CANDIDATES.join(', ')}`,
+    );
+  }
+  const folderPath = folder.path;
 
   const listing = runJson(metabotBin, ['memory', 'list', folder.id]);
   const summaries = listing.documents;
@@ -389,7 +397,7 @@ function usage() {
     '  --status <status>     Show only one status',
     '  --id <TODO-ID>        Print one complete canonical item',
     '  --json                Emit structured JSON',
-    '  --folder-path <path>  Override /imac/todo',
+    '  --folder-path <path>  Override the auto-detected machine ToDo root',
     '  --max-next <chars>    Limit task and next-action text (default: 180)',
     '  --help                Show this help',
   ].join('\n');
@@ -401,7 +409,7 @@ function parseArgs(argv) {
     status: null,
     json: false,
     id: null,
-    folderPath: DEFAULT_FOLDER_PATH,
+    folderPath: null,
     maxNext: 180,
     help: false,
   };
