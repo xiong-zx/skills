@@ -1,0 +1,4 @@
+interface:
+  display_name: "Experimental Technical Report"
+  short_description: "Write reproducible evidence-backed technical reports"
+  default_prompt: "Use $tech-report to write a reproducible technical report from the available code, run metadata, logs, and artifacts."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematical Analysis Report"
+  short_description: "Write auditable formula-first scientific reports"
+  default_prompt: "Use $math-report to write a self-contained mathematical analysis with explicit assumptions, derivations, evidence, and consensus."
