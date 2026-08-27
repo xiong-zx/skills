@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "name": "literature-report",
+  "version": "1.0.0",
+  "source": "personal skill repository",
+  "dependencies": {
+    "required_tools": [],
+    "optional_skills": []
+  },
+  "supported_outputs": ["markdown", "latex", "pdf"]
+}
