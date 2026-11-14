@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mathematics Document"
+  short_description: "Develop precise formal mathematical content"
+  default_prompt: "Use $doc-math to develop the mathematical content of this research document with clear notation, explicit assumptions, formal statements, and complete derivations."

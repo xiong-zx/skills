@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explain Literature"
+  short_description: "Map existing research by assumptions and coverage"
+  default_prompt: "Use $explain-literature to explain this existing corpus through a clear taxonomy, coverage map, information boundaries, and self-contained research questions; do not search for new papers."

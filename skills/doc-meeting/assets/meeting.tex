@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\title{Research Meeting: Topic}
+\author{}
+\date{YYYY-MM-DD}
+
+\begin{document}
+\maketitle
+
+\textbf{Purpose:} State the specific feedback or choice needed.
+
+\textbf{Takeaway or open question:} State the strongest supported conclusion,
+or the question being explored.
+
+% Optional starter: merge, replace, reorder, or remove sections for this meeting.
+\section{Problem, information, and target}
+Give brief motivation if needed. Define only notation used below.
+% Insert the actual setup, assumptions, target, and budget formulas here.
+
+\section{Classification or comparison}
+% For a taxonomy, define axes and relevant joint cases. For an experiment,
+% replace this table with the setting and method comparison.
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}YY@{}}
+\toprule
+Dimension & Categories in scope & Why it matters \\
+\midrule
+Operational question & Disjoint cases; state exclusions & Concrete consequence \\
+\bottomrule
+\end{tabularx}
+
+\section{Evidence and unresolved points}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.17\textwidth}YYY@{}}
+\toprule
+Work or method & Setting and assumptions & Guarantee or result & Boundary and source \\
+\midrule
+Paper setting & Relevant joint case & Formula, rate, or comparison & Limitation; source locator \\
+\bottomrule
+\end{tabularx}
+
+Use ordinary category names and standard citations, for example Author et al.~\cite{example}.
+Give only the interpretation needed for discussion. For empirical results,
+include the necessary sample size and uncertainty. An unverified case does not
+establish novelty.
+
+\section{Questions for discussion}
+\begin{enumerate}[leftmargin=*]
+  \item State a concrete choice tied to the evidence or missing step above.
+  \item Add another question only if needed.
+\end{enumerate}
+
+% Reuse the project's bibliography when available; do not define citation aliases.
+\begin{thebibliography}{9}
+\bibitem{example} Author(s). \emph{Paper title}. Venue or source, year. DOI or URL.
+\end{thebibliography}
+
+\end{document}

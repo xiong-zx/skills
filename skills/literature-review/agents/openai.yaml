@@ -1,0 +1,6 @@
+interface:
+  display_name: "Literature Review"
+  short_description: "Retrieve, verify, and map scholarly evidence"
+  default_prompt: "Use $literature-review to retrieve, screen, verify, and organize the scholarly evidence for this question."
+policy:
+  allow_implicit_invocation: true

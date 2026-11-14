@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "name": "doc-literature",
+  "version": "3.2.0",
+  "source": "personal skill repository",
+  "dependencies": {
+    "required_tools": [],
+    "optional_skills": ["doc-math", "literature-fast", "literature-review", "writing-research"]
+  },
+  "supported_outputs": ["markdown", "latex", "pdf"]
+}

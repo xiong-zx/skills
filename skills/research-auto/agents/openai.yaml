@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research Auto"
+  short_description: "Supervise research stages, exploration, and goal checks"
+  default_prompt: "使用 $research-auto 在已批准目标和阶段内充分研究：按问题分工、逐轮检查方向并独立核查；汇报先简短恢复上下文，再给关键变化，持续工作遵循授权和停止条件。"
+policy:
+  allow_implicit_invocation: true

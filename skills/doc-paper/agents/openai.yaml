@@ -1,0 +1,4 @@
+interface:
+  display_name: "Submission Paper"
+  short_description: "Submission papers with complete claims and evidence"
+  default_prompt: "Use $doc-paper to draft or revise this publication paper, directly applying $writing-research and the paper-specific argument, evidence, and readiness requirements."

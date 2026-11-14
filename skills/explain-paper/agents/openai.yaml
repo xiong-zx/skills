@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explain Paper"
+  short_description: "Paper story, formulation, takeaways, and reading guide"
+  default_prompt: "Use $explain-paper to give a detailed first explanation of this paper's story, logical outline, formulation, and mechanism, then state its takeaways and identify core passages and research-provoking details worth my own reading."

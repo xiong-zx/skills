@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Slides"
+  short_description: "Research slides with clear, source-backed equations"
+  default_prompt: "Use $doc-slides to turn my approved outline into research slides, using well-typeset formulas and retaining the LaTeX sources."

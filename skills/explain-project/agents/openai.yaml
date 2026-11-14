@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explain Project"
+  short_description: "Explain goals, progress, value, and user decisions"
+  default_prompt: "Use $explain-project to briefly restore my project context and explain the most important change, key limitation, and any decision I need to make; link existing details and expand where I ask."

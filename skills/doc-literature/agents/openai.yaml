@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Document"
+  short_description: "Structure a source-backed literature document"
+  default_prompt: "Use $doc-literature to turn this verified corpus into a structured, source-backed literature document."

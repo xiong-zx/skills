@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "name": "doc-paper",
+  "version": "2.0.0",
+  "source": "personal skill repository",
+  "dependencies": {
+    "required_tools": [],
+    "required_skills": ["writing-research"],
+    "optional_skills": ["review-manuscript", "proof-audit"]
+  },
+  "supported_outputs": ["markdown", "latex", "pdf"]
+}

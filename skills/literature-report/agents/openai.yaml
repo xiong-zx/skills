@@ -1,4 +1,0 @@
-interface:
-  display_name: "Literature Report"
-  short_description: "Formula-first literature synthesis for research reports"
-  default_prompt: "Use $literature-report to synthesize this literature into a conclusion-first, formula-first research report."

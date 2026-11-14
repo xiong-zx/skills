@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "name": "doc-meeting",
+  "version": "3.4.0",
+  "source": "personal skill repository",
+  "dependencies": {
+    "required_tools": [],
+    "optional_skills": ["doc-experiment", "doc-math", "writing-research"]
+  },
+  "supported_outputs": ["markdown", "latex", "pdf"]
+}

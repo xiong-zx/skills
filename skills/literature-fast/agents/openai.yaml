@@ -1,0 +1,6 @@
+interface:
+  display_name: "Literature Fast"
+  short_description: "Fast web-first paper discovery and triage"
+  default_prompt: "Use $literature-fast to quickly find and prioritize papers on this topic for me to read."
+policy:
+  allow_implicit_invocation: false

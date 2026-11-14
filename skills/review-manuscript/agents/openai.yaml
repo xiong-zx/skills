@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Manuscript"
+  short_description: "Review papers and polish their language after drafting"
+  default_prompt: "Use $review-manuscript to review this paper or polish its language within my requested scope, preserving scientific meaning and evidence."

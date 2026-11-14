@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "name": "writing-research",
+  "version": "5.0.0",
+  "source": "personal skill repository",
+  "dependencies": {
+    "required_tools": [],
+    "optional_skills": ["doc-paper", "doc-math", "doc-literature", "doc-experiment", "doc-meeting", "review-manuscript", "proof-audit", "proofread-math"]
+  },
+  "supported_outputs": ["markdown", "latex", "pdf"]
+}

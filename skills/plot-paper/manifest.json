@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "name": "plot-paper",
+  "version": "1.3.1",
+  "source": "personal skill repository",
+  "dependencies": {
+    "required_tools": ["python3", "matplotlib", "numpy"],
+    "optional_tools": ["pillow"],
+    "optional_skills": ["doc-paper", "writing-research", "doc-experiment"]
+  },
+  "supported_outputs": ["pdf", "png", "csv"]
+}

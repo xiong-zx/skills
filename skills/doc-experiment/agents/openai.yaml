@@ -1,0 +1,4 @@
+interface:
+  display_name: "Experiment Document"
+  short_description: "Record reproducible experimental evidence"
+  default_prompt: "Use $doc-experiment to create a reproducible experiment record from the available code, run metadata, logs, and artifacts."

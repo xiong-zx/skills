@@ -1,29 +1,73 @@
-# MetaBot Personal Skills
+# Research Agent Skills
 
-This private repository is the source of truth for personal MetaBot Skills that
-do not belong in the public MetaBot product repository.
+A collection of 19 skills for doing research with Codex and Claude Code. They
+cover literature search, reading and explaining papers, mathematical research,
+academic writing and review, figures, and research talks.
 
-## Bundles
+## Install
 
-- `metabot-todos`: reads and validates the current machine's canonical ToDos.
-- `math-report`: produces formula-first mathematical analysis reports.
-- `tech-report`: produces reproducible experimental technical reports.
+Clone this repository somewhere you plan to keep it, then run the following
+from the clone:
 
-Each directory under `skills/` is a complete Skill bundle. Edit and review the
-Git-tracked bundle first, then publish it to Skill Hub:
-
-```bash
-metabot skills publish <name> --from skills/<name> --visibility published
+```sh
+git clone https://github.com/xiong-zx/skills.git
+cd skills
 ```
 
-Install into a review directory before enabling engine discovery:
+Choose the client directories you want. This example links the full collection
+into both clients and preserves any skills you already have under the same names.
 
-```bash
-metabot skills install <name>
-metabot skills install <name> --to ~/.codex/skills/<name> --trust
-metabot skills install <name> --to ~/.agents/skills/<name> --trust
+```sh
+for destination in "$HOME/.agents/skills" "$HOME/.claude/skills"; do
+  mkdir -p "$destination"
+  for source in "$PWD"/skills/*; do
+    [ -f "$source/SKILL.md" ] || continue
+    target="$destination/${source##*/}"
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      printf 'Already exists: %s\n' "$target"
+      continue
+    fi
+    ln -s "$source" "$target"
+  done
+done
 ```
 
-The Git repository is authoritative; Skill Hub is the distribution layer, and
-the global engine directories are installed copies. Do not edit installed
-copies directly.
+Keep the bundles together in the clone because some skills link to their
+siblings. Run `git pull` in the clone to update. Open a new session if a skill
+does not appear. In Codex, use e.g. `$explain-paper`. In Claude Code, use
+`/explain-paper`. See the [Codex skill guide][codex] and
+[Claude Code skill guide][claude] for other discovery options.
+
+## Skill catalog
+
+| Goal | Skills |
+| --- | --- |
+| Search the literature | [literature-fast](skills/literature-fast/SKILL.md) builds a short reading list. [literature-review](skills/literature-review/SKILL.md) searches, verifies and organizes a larger body of work. [doc-literature](skills/doc-literature/SKILL.md) turns checked sources into a written review. |
+| Understand a paper or project | [explain-paper](skills/explain-paper/SKILL.md) guides a close reading. [explain-literature](skills/explain-literature/SKILL.md) maps an existing collection. [explain-project](skills/explain-project/SKILL.md) explains the goal, progress and decisions. |
+| Develop and run research | [research-brainstorm](skills/research-brainstorm/SKILL.md) develops and compares questions. [research-auto](skills/research-auto/SKILL.md) supervises authorized theory exploration and independent checks. [grill-me](skills/grill-me/SKILL.md) challenges a plan or idea in conversation. |
+| Write and review research | [writing-research](skills/writing-research/SKILL.md) supports general academic prose and notes. [doc-paper](skills/doc-paper/SKILL.md) prepares submission papers. [review-manuscript](skills/review-manuscript/SKILL.md) audits a draft and polishes its language. |
+| Develop math and document results | [doc-math](skills/doc-math/SKILL.md) develops definitions, statements and proofs. [doc-experiment](skills/doc-experiment/SKILL.md) records reproducible experiments. [plot-paper](skills/plot-paper/SKILL.md) prepares publication figures. |
+| Prepare meetings and talks | [doc-meeting](skills/doc-meeting/SKILL.md) writes a technical pre-read. [doc-advisor-conversation](skills/doc-advisor-conversation/SKILL.md) prepares talking points. [doc-slides](skills/doc-slides/SKILL.md) makes research decks. [doc-script](skills/doc-script/SKILL.md) writes a speakable script. |
+
+Each bundle starts at `SKILL.md`. Read its requirements before using optional
+helpers. The literature-review helper reads `OPENALEX_API_KEY` from the
+environment for OpenAlex calls. Figure and slide workflows may need Python
+packages, a TeX engine, or PowerPoint, depending on the output.
+
+## Older skill names
+
+The MetaBot integrations (`metabot`, `metabot-team`, and `metabot-todos`) are
+retired. For older names, use `doc-math` in place of `math-report`,
+`doc-experiment` in place of `tech-report`, and `doc-literature` in place of
+`literature-report`. For `doc-manuscript`, use `writing-research` for notes or
+`doc-paper` for a publication draft.
+
+## Sources and licenses
+
+Source credits are recorded in the relevant bundles. The adapted
+[literature-review bundle](skills/literature-review/SKILL.md) carries its
+[Apache 2.0 license](skills/literature-review/LICENSE) and
+[provenance notes](skills/literature-review/references/provenance.md).
+
+[codex]: https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills
+[claude]: https://code.claude.com/docs/en/skills#choose-where-skills-load

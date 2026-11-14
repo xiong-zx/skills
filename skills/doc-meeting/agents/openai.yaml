@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meeting Pre-Read Document"
+  short_description: "Prepare a concise scientific meeting pre-read"
+  default_prompt: "Use $doc-meeting to prepare a focused scientific pre-read with readable labels, conventional citations and a reference list, core formulas or tables, and clear advisor questions."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Advisor Conversation Document"
+  short_description: "Capture ideas and prepare advisor talking prompts"
+  default_prompt: "Use $doc-advisor-conversation to capture these thoughts for one advisor conversation and, when requested, turn them into a concise talking-prompt card."

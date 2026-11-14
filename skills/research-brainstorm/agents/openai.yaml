@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Brainstorm"
+  short_description: "Explore and refine research ideas with clear explanations"
+  default_prompt: "Use $research-brainstorm to help me explore research questions, explain promising ideas clearly, check relevant prior work, and develop the next steps at the depth I request."

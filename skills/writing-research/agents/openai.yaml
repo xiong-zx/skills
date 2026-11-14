@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research Writing"
+  short_description: "Academic prose, research notes, and conservative revision"
+  default_prompt: "Use $writing-research to write or revise this research passage, note, or memo with clear reasoning, natural academic prose, and explicit evidence and open questions."
+policy:
+  allow_implicit_invocation: true

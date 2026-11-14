@@ -1,0 +1,4 @@
+interface:
+  display_name: "Talk Script"
+  short_description: "Natural spoken scripts with clear slide transitions"
+  default_prompt: "Use $doc-script to turn my current slides or outline into a natural spoken script, with clear transitions and a realistic timing plan."

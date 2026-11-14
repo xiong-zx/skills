@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Figures"
+  short_description: "Consistent, reusable publication figures with a visual check"
+  default_prompt: "Use $plot-paper to draw these paper figures in the shared style and visually check them before reporting."
