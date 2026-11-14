@@ -54,14 +54,6 @@ helpers. The literature-review helper reads `OPENALEX_API_KEY` from the
 environment for OpenAlex calls. Figure and slide workflows may need Python
 packages, a TeX engine, or PowerPoint, depending on the output.
 
-## Older skill names
-
-The MetaBot integrations (`metabot`, `metabot-team`, and `metabot-todos`) are
-retired. For older names, use `doc-math` in place of `math-report`,
-`doc-experiment` in place of `tech-report`, and `doc-literature` in place of
-`literature-report`. For `doc-manuscript`, use `writing-research` for notes or
-`doc-paper` for a publication draft.
-
 ## Sources and licenses
 
 Source credits are recorded in the relevant bundles. The adapted
